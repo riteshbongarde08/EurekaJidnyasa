@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            background-image: url(b.png);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            font-size: 1em;
+        }
+        #navbar{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 25%;
+            margin: 0;
+            background-color:#131313;
+            height: 100vh;
+            display: none;
+        }
+        #navitems{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+        }
+        hr{
+            color: red;
+            margin-top: 7%;
+        }
+
+        #menu{
+            display: inline;
+            padding: 2px;
+            border-radius: 50px;
+        }
+        #menu img{
+            margin: 1%;
+            padding: 1%;
+            background-color: #131313;
+            border: 2px solid #00FFFF;
+            border-radius: 20px;
+
+        }
+        .close-button {
+            cursor: pointer;
+            width: 20%;
+            padding: 0; 
+            background-color: #131313;
+            width: 50px;
+            margin: 2%;
+        }
+
+        .close-button:hover{
+            transform: rotate(180deg);
+            transition: 1s;
+        }
+
+          .navitem {
+        display: flex;
+        align-items: center; 
+         border-top: 0.1px solid #00FFFF;
+         border-bottom: 1px solid white;
+         height: 10vh;
+        width: 100%;
+}
+
+    .navitem:hover {
+        box-shadow: #00FFFF 2px 2px 10px;
+        font-weight: 700;
+        transform: scale(1.02);
+        transition: 0.2s;
+        img{
+            transform: rotateY(360deg);
+            transition: 1.5s;
+        }
+    }
+
+    .navitem a {
+        text-decoration: none;
+        font-size: 4vh;
+        color: #00FFFF;
+        margin-left: 10px;
+    }
+
+    .navimg{
+        width: 15%;
+    }
+
+    @media (max-width:600px){
+        #navbar{
+            width: 99%;
+        }
+        .navimg{
+        width: 40px;
+    }
+        .navitem{
+            height: 9vh;
+
+        }
+        .navitem a{
+            font-size: 3.3vh;
+
+        }
+
+    }
+    
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+    <ul id="navitems">
+        <label for="closeButton"><div class="close-button" id="closeButton"><img src="cross.png" alt="" width="50px" ></div></label>
+        <div id="navitem1" class="navitem">
+        <img src="home.png" alt="homeimg" class="navimg">
+        <li><a href="#" class="a">Home</a></li>
+        </div>
+        <div id="navitem2" class="navitem">
+        <img src="calendar.png" alt="" class="navimg">
+        <li><a href="" class="a">Department</a></li>
+        </div>
+        <div id="navitem2" class="navitem">
+        <img src="information.png" alt="" class="navimg">
+        <li><a href="" class="a">About Us</a></li>
+        </div>
+        <div id="navitem4" class="navitem" >
+        <img src="gallery.png" alt="" class="navimg">
+        <li><a href="" class="a">Gallary</a></li>
+        </div>
+        <div id="navitem5" class="navitem">
+        <img src="register.png" alt="" class="navimg">
+        <li><a href="" class="a">Register</a></li>
+        </div>
+        <div>
+        <li><a href="" id="navitem6" class="a"></a></li>
+        </div> 
+    </ul>
+</nav>
+<div id="menu">
+    <img src="list.png" alt="Imgae">
+</div>
+<script>
+    // Get references to the navbar, menu, and close button elements
+    const navbar = document.getElementById('navbar');
+    const menu = document.getElementById('menu');
+    const closeButton = document.getElementById('closeButton');
+
+    // Function to toggle navbar visibility
+    function toggleNavbar() {
+        if (navbar.style.display === 'none' || navbar.style.display === '') {
+            navbar.style.display = 'block';
+            navbar.
+            menu.style.display='none';
+        } else {
+            navbar.style.display = 'none';
+            menu.style.display='block';
+        }
+    }
+
+    // Add an event listener to the menu to toggle navbar visibility
+    menu.addEventListener('click', toggleNavbar);
+
+    // Add an event listener to the close button to hide the navbar
+    closeButton.addEventListener('click', toggleNavbar);
+</script>
+</body>
+</html>
